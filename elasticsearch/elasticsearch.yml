@@ -1,0 +1,13 @@
+cluster.name: elastic-test
+cluster.routing.allocation.awareness.attributes: zone
+cluster.routing.allocation.awareness.force.zone.values: az1
+cluster.routing.allocation.node_concurrent_recoveries: 50
+node.name: ${HOSTNAME}
+node.attr.zone: az1
+network.host: 0.0.0.0
+http.port: 9200
+discovery.zen.ping.unicast.hosts: ["10.0.0.25","10.0.0.26","10.0.0.27","10.0.0.28","10.0.0.29","10.0.0.30","10.0.0.31","10.0.0.32","10.0.0.43","10.0.0.44"]
+discovery.zen.minimum_master_nodes: 2
+gateway.recover_after_nodes: 3
+gateway.expected_master_nodes: 3
+gateway.recover_after_time: 1m
